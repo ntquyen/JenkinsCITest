@@ -26,7 +26,11 @@ module.exports = function ( karma ) {
     /**
      * How to report, by default.
      */
-    reporters: 'dots',
+    reporters: ['dots', 'junit'],
+    junitReporter: {
+      outputFile: 'test-results1.xml',
+      suite: ''
+    },
 
     /**
      * On which port should the browser connect, on which port is the test runner
@@ -54,7 +58,7 @@ module.exports = function ( karma ) {
      * open and the tests will automatically occur there during the build. This has
      * the aesthetic advantage of not launching a browser every time you save.
      */
-    browsers: []
+    browsers: ['PhantomJS']
   });
 };
 
